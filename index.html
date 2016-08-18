@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Bharath's website</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/scrolling-nav.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	<style>
+		.intro-section{
+			background-image: url("abstract_mosaic_background.png");
+		}
+	</style>
+</head>
+
+<!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header page-scroll">                
+                <a class="navbar-brand page-scroll" href="#page-top">Home</a>
+            </div>
+			
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a class="page-scroll" href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#about">Technologies</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#work">YouTube search</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">Contact</a>
+                    </li>
+                </ul>				
+            </div>
+			
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Intro Section -->
+    <section id="intro" class="intro-section">
+        <div class="container">
+			<div class="row">
+				<h1> Bharath's single-page application</h1>
+				<h3>Responsive Web Design is a key-feature in this application</h3>
+				<h3>Scroll down for more!!</h3>
+            </div>
+		</div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+			<h1>Technologies used in this webpage</h1>
+			<img src="HTML5_logo.svg" alt="HTML5 logo"></img>
+			<br>
+			<br>
+			<div class="row">
+				<img width="100px" height="100px" src="js.jpg" alt="JavaScript logo"></img>
+				<h4>JavaScript</h4>
+			</div>
+			<div class="row">
+				<img src="bootstrap-solid.svg" alt="Bootstrap logo"></img>
+				<h4>Bootstrap 3.3.6</h4>
+			</div>
+			<div class="row">
+				<img src="AngularJS-medium.png" alt="Angular logo"></img>
+				<h4>Angular 1.5.7</h4>
+			</div>
+			<div class="row">
+				<img src="Xampp_logo.svg" alt="XAMPP logo"></img>
+				<h4>Development server</h4>
+			</div>
+        </div>
+    </section>
+
+    <!-- Work Section -->
+    <section id="work" class="work-section">
+        <div class="container">
+            <div class="row">
+                    <img height="100px width="100px" src="YouTube-logo-full_color.png" alt="YouTube logo"></img>
+
+            </div>
+			<div class="row" ng-app="myServiceModule">
+				<div id="simple" ng-controller="MyController">
+					<form ng-submit="search(query)">
+						<input type="text" ng-model="query">
+						<button type="submit">Search</button>
+					</form>
+					<br/><br/>
+					<div ng-if="errors"></div>
+					<table class="table table-responsive table-bordered" ng-if="results" align="center">
+						<thead>
+							<tr>
+								<th>Thumbnail</th>
+								<th>Description</th>
+								<th>Video ID</th>
+							<tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="result in results">
+								<td><img id="thumbnails" src="{{result.snippet.thumbnails.default.url}}">
+								</img></td>
+								<td>{{result.snippet.description}}</td>
+								<td>{{result.id.videoId}}</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>Contact Section</h1>
+					<h4>My email: <a href="mailto:bharath@skilleagle.com">bharath@skilleagle.com</a></h4>
+					<h4>Phone: (571)293-1293</h4>
+					<h4>Address: 7730, Hanover Pkwy, Apt. no. T-2,<br> Greenbelt, MD - 20770</h4>
+					<div id='map'></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    
+	
+	<!-- Scrolling Nav JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/scrolling-nav.js"></script>
+	
+	<!-- Angular 1.5.7 script -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+	
+	<!-- Custom service script -->
+	<script src="js/video-search.service.js"></script>
+	
+</body>
+</html>
