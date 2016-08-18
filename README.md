@@ -1,9 +1,10 @@
-# Single-Page-Application
-* Single_page Appication with a navbar and sections for each content.
-* YouTube video search using http call to YouTube Data API v3.
-* Angular 1.5.x service that does $http service call to fetch videos.
+## About the application
+* Single Page Appication with a navbar and sections for each content.
+* YouTube video search using http call to [YouTube Data API] (https://developers.google.com/youtube/v3)
+* [Angular 1.5.x] (https://angularjs.org/) service that does $http service call to fetch videos.
+* SPA design template credited to [callmenick] (http://callmenick.com/post/single-page-site-with-smooth-scrolling-highlighted-link-and-fixed-navigation)
 
-# How to execute code:
+## How to execute code:
 1. Install [XAMPP] (https://www.apachefriends.org/index.html) server.
 2. Copy/Download this repository into [xampp_dir]/htdocs/[Folder_name]
 3. Run Xampp control panel.
